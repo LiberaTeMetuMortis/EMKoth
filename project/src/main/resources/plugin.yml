@@ -1,0 +1,4 @@
+version: "1.0"
+name: "EMKoth"
+main: "com.github.liberatemetumortis.emkoth.EMKoth"
+api-version: "1.16.5"
