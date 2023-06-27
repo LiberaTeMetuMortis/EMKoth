@@ -105,4 +105,4 @@ tasks.named("multiVersionPlugin") {
 configure<KtlintExtension> {
     version.set("0.49.1")
 }
-fun javaVersion() = "16" 
+fun javaVersion() = "16"

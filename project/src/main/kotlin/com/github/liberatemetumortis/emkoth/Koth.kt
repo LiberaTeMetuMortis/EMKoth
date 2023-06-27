@@ -13,7 +13,7 @@ class Koth(val name: String, val time: String) {
     companion object {
         val koths = mutableListOf<Koth>()
         fun getKothsFromConfig(config: ConfigurationSection) {
-            for(key in config.getKeys(false)) {
+            for (key in config.getKeys(false)) {
                 val name = config.getString("$key.name") ?: continue
                 val time = config.getString("$key.time") ?: continue
                 koths.add(Koth(name, time))
@@ -36,7 +36,7 @@ class Koth(val name: String, val time: String) {
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "koth start ${this.name} 180")
             },
             millis / 50,
-            20 * 60 * 60 * 24
+            20 * 60 * 60 * 24,
         )
         Bukkit.getScheduler().runTaskTimer(
             EMKoth.instance,
@@ -45,10 +45,9 @@ class Koth(val name: String, val time: String) {
                 if (leftTime == "N/A") return@Runnable
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "koth end ${this.name}")
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "koth start ${this.name} 120")
-
             },
             millis / 50 + 20 * 60 * 15,
-            20 * 60 * 60 * 24
+            20 * 60 * 60 * 24,
         )
     }
 }
